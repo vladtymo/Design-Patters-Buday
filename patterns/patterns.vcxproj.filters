@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Dropbox\Work\Step\3. Full-Time\4. Design Patterns\1. DP - Creational\01 Abstract Factory\DP_Creational_AbstractFactory.cpp">
+    <ClCompile Include="DP_Creational_AbstractFactory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
