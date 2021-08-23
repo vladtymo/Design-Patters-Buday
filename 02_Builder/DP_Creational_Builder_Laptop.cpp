@@ -6,6 +6,7 @@ using namespace std;
 // Creational Pattern: Builder
 class Laptop
 {
+private:
     string screenResolution;
     string proccessor;
     string memory;
@@ -136,7 +137,7 @@ public:
 
 void main()
 {
-	LaptopDirector dir;
+    LaptopDirector dir;
     dir.SetBuilder(new GamingLaptopBuilder()); // new TripLaptopBuilder()
     dir.Configurate();
     Laptop * laptop = dir.GetLaptop();

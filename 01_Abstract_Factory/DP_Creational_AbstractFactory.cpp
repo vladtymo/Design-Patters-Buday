@@ -87,6 +87,7 @@ public:
 	}
 };
 
+// abstract factory
 class ToyFactory
 {
 public:
