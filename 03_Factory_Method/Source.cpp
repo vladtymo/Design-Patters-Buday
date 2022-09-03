@@ -4,14 +4,14 @@ using namespace std;
 class User
 {
 public:
-	virtual void Info() = 0;
+	virtual void Info() = 0; // pure virtual method
 
 };
 
 class Admin : public User
 {
 public:
-	virtual void Info()
+	void Info() override
 	{
 		cout << "I`m admin";
 	}
@@ -20,7 +20,7 @@ public:
 class Manager : public User
 {
 public:
-	virtual void Info()
+	void Info() override
 	{
 		cout << "I`m manager";
 	}
@@ -29,7 +29,7 @@ public:
 class Guest : public User
 {
 public:
-	virtual void Info()
+	void Info() override
 	{
 		cout << "I`m guest";
 	}
@@ -39,7 +39,7 @@ enum UserTypes { ADMIN, GUEST, MANAGER };
 
 UserTypes ReadUserTypeFromFile()
 {
-	return UserTypes::ADMIN;
+	return UserTypes::MANAGER;
 }
 
 class UserFactory
