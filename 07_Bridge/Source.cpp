@@ -133,13 +133,16 @@ public:
 void main()
 {
 	BuldingCompany buildingCompany = BuldingCompany();
+
 	buildingCompany.BuildFoundation();
+
 	buildingCompany.SetWallCreator(new BrickWallCreator());
 	buildingCompany.BuildRoom();
 	buildingCompany.SetWallCreator(new ConcreteSlabWallCreator());
 	buildingCompany.BuildRoom();
 	buildingCompany.SetWallCreator(new WoodenWallCreator());
 	buildingCompany.BuildRoom();
+
 	buildingCompany.BuildRoof();
 
 	system("pause");

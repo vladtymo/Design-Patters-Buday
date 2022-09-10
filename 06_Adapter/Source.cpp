@@ -49,13 +49,15 @@ public:
 
 void main()
 {
-	// EuroSocket euroS;
+	//EuroSocket euroS;
 	AmericanSocket usaS;
 
 	ElectricityConsumer consumer;
 
-	Adapter ad(&usaS);
+	//consumer.Charge(&usaS);
 
+	Adapter ad(&usaS);
 	consumer.Charge(&ad);
+
 	consumer.Charge(new Adapter(&usaS));
 }
