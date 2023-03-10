@@ -100,6 +100,8 @@ class TeddyToyFactory : public ToyFactory
 public:
 	Bear* GetBear() override
 	{
+		// creating...
+		// initialization...
 		return new TeddyBear();
 	}
 	Cat* GetCat() override
@@ -123,7 +125,7 @@ public:
 
 void main()
 {
-	ToyFactory* factory = new TeddyToyFactory();
+	ToyFactory* factory = new WoodenToyFactory();
 
 	Bear* bear = factory->GetBear();
 	Cat* cat = factory->GetCat();
