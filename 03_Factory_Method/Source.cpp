@@ -6,6 +6,7 @@ class User
 public:
 	virtual void Info() = 0; // pure virtual method
 
+	// create method()
 };
 
 class Admin : public User
@@ -39,7 +40,7 @@ enum UserTypes { ADMIN, GUEST, MANAGER };
 
 UserTypes ReadUserTypeFromFile()
 {
-	return UserTypes::MANAGER;
+	return UserTypes::GUEST;
 }
 
 class UserFactory
@@ -64,6 +65,7 @@ void main()
 	UserFactory factory;
 
 	UserTypes type = ReadUserTypeFromFile();
+
 	User* user = factory.CreateUser(type);
 
 	user->Info();
