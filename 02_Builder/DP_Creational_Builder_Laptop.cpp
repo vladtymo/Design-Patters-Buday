@@ -106,23 +106,23 @@ class TripLaptopBuilder : public LaptopBuilder
 class LaptopDirector
 {
     LaptopBuilder * builder;
+    void ClearBuilder()
+    {
+        if (builder != nullptr) delete builder;
+    }
 public:
 	LaptopDirector(LaptopBuilder* builder = nullptr) : builder(builder) { }
 	~LaptopDirector()
 	{
-		if (builder != nullptr) delete builder;
+        ClearBuilder();
 	}
 
     void SetBuilder(LaptopBuilder * b)
     {
+        ClearBuilder();
         builder = b;
     }
-    Laptop * GetLaptop() const
-    {
-		// Повернення готового ноутбука
-        return builder->GetMyLaptop();
-    }
-    void Configurate()
+    Laptop* Configurate()
     {
         // Створення ноутбука
         builder->CreateNewLaptop();
@@ -132,15 +132,18 @@ public:
         builder->SetMemory();
         builder->SetHDD();
         builder->SetBattery();
+        // Повернення готового ноутбука
+        return builder->GetMyLaptop();
     }
 };
 
 void main()
 {
     LaptopDirector dir;
-    dir.SetBuilder(new GamingLaptopBuilder()); // new TripLaptopBuilder()
-    dir.Configurate();
-    Laptop * laptop = dir.GetLaptop();
+    dir.SetBuilder(new GamingLaptopBuilder());
+    dir.SetBuilder(new TripLaptopBuilder());
+    
+    Laptop * laptop = dir.Configurate();
 
     laptop->Show();
 
