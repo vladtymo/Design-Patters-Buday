@@ -8,14 +8,13 @@ public:
 	virtual void BuildWall() = 0;
 	virtual void BuildWallWithDoor() = 0;
 	virtual void BuildWallWithWindow() = 0;
-	virtual void BuildGrage() = 0;
 };
 
 // abstract
 class Company
 {
 protected:
-	WallCreator* _wallCreator; // imp
+	WallCreator* _wallCreator; // implementation
 public:
 	void SetWallCreator(WallCreator* wallCreator)
 	{
@@ -41,8 +40,6 @@ public:
 		_wallCreator->BuildWall();
 
 		cout << "Room finished.\n";
-		//WallCreator.BuildGrage();
-
 	}
 	void BuildRoof()
 	{
@@ -53,10 +50,6 @@ public:
 class BrickWallCreator : public WallCreator
 {
 public:
-	BrickWallCreator()
-	{
-	}
-
 	void BuildGrage()
 	{
 		cout << "Brick garage created!";
@@ -81,10 +74,6 @@ public:
 class ConcreteSlabWallCreator : public WallCreator
 {
 public:
-	ConcreteSlabWallCreator()
-	{
-	}
-
 	void BuildGrage()
 	{
 		cout << "Concrete garage created!";
