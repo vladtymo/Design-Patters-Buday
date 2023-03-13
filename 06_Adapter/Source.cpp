@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// locked
 class AmericanSocket
 {
 public:
@@ -9,7 +10,6 @@ public:
 		cout << "USA - 220 V\n";
 	}
 };
-
 
 class EuroSocket
 {
@@ -54,7 +54,7 @@ void main()
 
 	ElectricityConsumer consumer;
 
-	//consumer.Charge(&usaS);
+	//consumer.Charge(&usaS); // error with type/interface
 
 	Adapter ad(&usaS);
 	consumer.Charge(&ad);
