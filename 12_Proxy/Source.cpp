@@ -135,7 +135,7 @@ void main()
 	int opNum = 0;
 	try
 	{
-		RobotBombDefuserProxy* proxy = new RobotBombDefuserProxy(41);
+		Robot* proxy = new RobotBombDefuserProxy(41);
 		proxy->WalkStraightForward(100);
 		opNum++;
 		proxy->TurnRight();
