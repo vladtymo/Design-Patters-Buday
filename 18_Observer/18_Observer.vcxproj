@@ -127,7 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="18_Observer.cpp" />
+    <ClCompile Include="Observer.cpp" />
+    <ClCompile Include="Product.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Buyer.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="Product.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
